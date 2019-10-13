@@ -4,11 +4,11 @@
 // All files in the project carrying such notice may not be copied, modified, or distributed
 // except according to those terms.
 use shared::minwindef::DWORD;
-use shared::wtypes::PROPERTYKEY;
+use shared::wtypes::{BSTR, PROPERTYKEY};
 use um::propidl::{PROPVARIANT, REFPROPVARIANT};
 use um::propkeydef::REFPROPERTYKEY;
 use um::unknwnbase::{IUnknown, IUnknownVtbl};
-use um::winnt::HRESULT;
+use um::winnt::{HRESULT, LPCWSTR};
 pub type IPropertyDescriptionList = IUnknown; // TODO
 RIDL!{#[uuid(0x886d8eeb, 0x8cf2, 0x4446, 0x8d, 0x02, 0xcd, 0xba, 0x1d, 0xbd, 0xcf, 0x99)]
 interface IPropertyStore(IPropertyStoreVtbl): IUnknown(IUnknownVtbl) {
@@ -43,4 +43,22 @@ ENUM!{enum GETPROPERTYSTOREFLAGS {
     GPS_EXTRINSICPROPERTIES = 0x200,
     GPS_EXTRINSICPROPERTIESONLY = 0x400,
     GPS_MASK_VALID = 0x7ff,
+}}
+RIDL!{#[uuid(0x71604b0f, 0x97b0, 0x4764, 0x85, 0x77, 0x2f, 0x13, 0xe9, 0x8a, 0x14, 0x22)]
+interface INamedPropertyStore(INamedPropertyStoreVtbl): IUnknown(IUnknownVtbl) {
+    fn GetNamedValue(
+        pszName: LPCWSTR,
+        ppropvar: *mut PROPVARIANT,
+    ) -> HRESULT,
+    fn SetNamedValue(
+        pszName: LPCWSTR,
+        propvar: REFPROPVARIANT,
+    ) -> HRESULT,
+    fn GetNameCount(
+        pdwCount: *mut DWORD,
+    ) -> HRESULT,
+    fn GetNameAt(
+        iProp: DWORD,
+        pbstrName: *mut BSTR,
+    ) -> HRESULT,
 }}

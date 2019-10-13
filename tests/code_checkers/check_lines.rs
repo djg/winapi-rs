@@ -20,6 +20,13 @@ const WHITE_LIST: &'static [(&'static str, &'static [&'static str])] = &[
             "    D3D12_MESSAGE_ID_CREATEGRAPHICSPIPELINESTATE_OM_DUAL_SOURCE_BLENDING_CAN_ONLY_HAVE_RENDER_TARGET_0",
         ],
     ),
+    (
+        r"um\mfidl.rs",
+        &[
+            "interface IMFExtendedCameraIntrinsicsDistortionModel6KT(IMFExtendedCameraIntrinsicsDistortionModel6KTVtbl):",
+            "interface IMFExtendedCameraIntrinsicsDistortionModelArcTan(IMFExtendedCameraIntrinsicsDistortionModelArcTanVtbl):",
+        ]
+    ),
 ];
 #[test]
 fn check_lines() {

@@ -4352,6 +4352,164 @@ fn um_memoryapi() {
     assert_eq!(size_of::<WIN32_MEMORY_REGION_INFORMATION_u_s>(), 4);
     assert_eq!(align_of::<WIN32_MEMORY_REGION_INFORMATION_u_s>(), 4);
 }
+#[cfg(feature = "mfapi")] #[test]
+fn um_mfapi() {
+    use winapi::um::mfapi::*;
+    assert_eq!(size_of::<MOVE_RECT>(), 24);
+    assert_eq!(align_of::<MOVE_RECT>(), 4);
+    assert_eq!(size_of::<DIRTYRECT_INFO>(), 24);
+    assert_eq!(align_of::<DIRTYRECT_INFO>(), 4);
+    assert_eq!(size_of::<MOVEREGION_INFO>(), 32);
+    assert_eq!(align_of::<MOVEREGION_INFO>(), 4);
+    assert_eq!(size_of::<ROI_AREA>(), 20);
+    assert_eq!(align_of::<ROI_AREA>(), 4);
+    assert_eq!(size_of::<MACROBLOCK_DATA>(), 12);
+    assert_eq!(align_of::<MACROBLOCK_DATA>(), 4);
+    assert_eq!(size_of::<FaceRectInfoBlobHeader>(), 8);
+    assert_eq!(align_of::<FaceRectInfoBlobHeader>(), 4);
+    assert_eq!(size_of::<FaceRectInfo>(), 20);
+    assert_eq!(align_of::<FaceRectInfo>(), 4);
+    assert_eq!(size_of::<FaceCharacterizationBlobHeader>(), 8);
+    assert_eq!(align_of::<FaceCharacterizationBlobHeader>(), 4);
+    assert_eq!(size_of::<FaceCharacterization>(), 16);
+    assert_eq!(align_of::<FaceCharacterization>(), 4);
+    assert_eq!(size_of::<CapturedMetadataExposureCompensation>(), 16);
+    assert_eq!(align_of::<CapturedMetadataExposureCompensation>(), 8);
+    assert_eq!(size_of::<CapturedMetadataISOGains>(), 8);
+    assert_eq!(align_of::<CapturedMetadataISOGains>(), 4);
+    assert_eq!(size_of::<CapturedMetadataWhiteBalanceGains>(), 12);
+    assert_eq!(align_of::<CapturedMetadataWhiteBalanceGains>(), 4);
+    assert_eq!(size_of::<MetadataTimeStamps>(), 24);
+    assert_eq!(align_of::<MetadataTimeStamps>(), 8);
+    assert_eq!(size_of::<HistogramGrid>(), 24);
+    assert_eq!(align_of::<HistogramGrid>(), 4);
+    assert_eq!(size_of::<HistogramBlobHeader>(), 8);
+    assert_eq!(align_of::<HistogramBlobHeader>(), 4);
+    assert_eq!(size_of::<HistogramHeader>(), 40);
+    assert_eq!(align_of::<HistogramHeader>(), 4);
+    assert_eq!(size_of::<HistogramDataHeader>(), 12);
+    assert_eq!(align_of::<HistogramDataHeader>(), 4);
+    assert_eq!(size_of::<MFFOLDDOWN_MATRIX>(), 272);
+    assert_eq!(align_of::<MFFOLDDOWN_MATRIX>(), 4);
+    assert_eq!(size_of::<MT_CUSTOM_VIDEO_PRIMARIES>(), 32);
+    assert_eq!(align_of::<MT_CUSTOM_VIDEO_PRIMARIES>(), 4);
+    assert_eq!(size_of::<MT_ARBITRARY_HEADER>(), 60);
+    assert_eq!(align_of::<MT_ARBITRARY_HEADER>(), 4);
+    assert_eq!(size_of::<MF_FLOAT2>(), 8);
+    assert_eq!(align_of::<MF_FLOAT2>(), 4);
+    assert_eq!(size_of::<MF_FLOAT3>(), 12);
+    assert_eq!(align_of::<MF_FLOAT3>(), 4);
+    assert_eq!(size_of::<MF_QUATERNION>(), 16);
+    assert_eq!(align_of::<MF_QUATERNION>(), 4);
+    assert_eq!(size_of::<MFCameraExtrinsic_CalibratedTransform>(), 44);
+    assert_eq!(align_of::<MFCameraExtrinsic_CalibratedTransform>(), 4);
+    assert_eq!(size_of::<MFCameraExtrinsics>(), 48);
+    assert_eq!(align_of::<MFCameraExtrinsics>(), 4);
+    assert_eq!(size_of::<MFCameraIntrinsic_PinholeCameraModel>(), 16);
+    assert_eq!(align_of::<MFCameraIntrinsic_PinholeCameraModel>(), 4);
+    assert_eq!(size_of::<MFCameraIntrinsic_DistortionModel>(), 20);
+    assert_eq!(align_of::<MFCameraIntrinsic_DistortionModel>(), 4);
+    assert_eq!(size_of::<MFPinholeCameraIntrinsic_IntrinsicModel>(), 44);
+    assert_eq!(align_of::<MFPinholeCameraIntrinsic_IntrinsicModel>(), 4);
+    assert_eq!(size_of::<MFPinholeCameraIntrinsics>(), 48);
+    assert_eq!(align_of::<MFPinholeCameraIntrinsics>(), 4);
+}
+#[cfg(feature = "mfidl")] #[test]
+fn um_mfidl() {
+    use winapi::um::mfidl::*;
+    assert_eq!(size_of::<MFRR_COMPONENT_HASH_INFO>(), 696);
+    assert_eq!(align_of::<MFRR_COMPONENT_HASH_INFO>(), 4);
+    assert_eq!(size_of::<MFRR_COMPONENTS>(), 16);
+    assert_eq!(align_of::<MFRR_COMPONENTS>(), 8);
+    assert_eq!(size_of::<ASF_FLAT_PICTURE>(), 5);
+    assert_eq!(align_of::<ASF_FLAT_PICTURE>(), 1);
+    assert_eq!(size_of::<ASF_FLAT_SYNCHRONISED_LYRICS>(), 6);
+    assert_eq!(align_of::<ASF_FLAT_SYNCHRONISED_LYRICS>(), 1);
+    assert_eq!(size_of::<MFTOPONODE_ATTRIBUTE_UPDATE>(), 40);
+    assert_eq!(align_of::<MFTOPONODE_ATTRIBUTE_UPDATE>(), 8);
+    assert_eq!(size_of::<MF_LEAKY_BUCKET_PAIR>(), 8);
+    assert_eq!(align_of::<MF_LEAKY_BUCKET_PAIR>(), 4);
+    assert_eq!(size_of::<MFBYTESTREAM_BUFFERING_PARAMS>(), 64);
+    assert_eq!(align_of::<MFBYTESTREAM_BUFFERING_PARAMS>(), 8);
+    assert_eq!(size_of::<MF_BYTE_STREAM_CACHE_RANGE>(), 16);
+    assert_eq!(align_of::<MF_BYTE_STREAM_CACHE_RANGE>(), 8);
+    assert_eq!(size_of::<MFNetCredentialManagerGetParam>(), 56);
+    assert_eq!(align_of::<MFNetCredentialManagerGetParam>(), 8);
+    assert_eq!(size_of::<MFINPUTTRUSTAUTHORITY_ACCESS_ACTION>(), 24);
+    assert_eq!(align_of::<MFINPUTTRUSTAUTHORITY_ACCESS_ACTION>(), 8);
+    assert_eq!(size_of::<MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS>(), 56);
+    assert_eq!(align_of::<MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS>(), 8);
+    assert_eq!(size_of::<MF_TRANSCODE_SINK_INFO>(), 32);
+    assert_eq!(align_of::<MF_TRANSCODE_SINK_INFO>(), 8);
+    assert_eq!(size_of::<MFT_REGISTRATION_INFO>(), 80);
+    assert_eq!(align_of::<MFT_REGISTRATION_INFO>(), 8);
+    assert_eq!(size_of::<MFCONTENTPROTECTIONDEVICE_INPUT_DATA>(), 20);
+    assert_eq!(align_of::<MFCONTENTPROTECTIONDEVICE_INPUT_DATA>(), 4);
+    assert_eq!(size_of::<MFCONTENTPROTECTIONDEVICE_OUTPUT_DATA>(), 40);
+    assert_eq!(align_of::<MFCONTENTPROTECTIONDEVICE_OUTPUT_DATA>(), 8);
+    assert_eq!(size_of::<MFCONTENTPROTECTIONDEVICE_REALTIMECLIENT_DATA>(), 528);
+    assert_eq!(align_of::<MFCONTENTPROTECTIONDEVICE_REALTIMECLIENT_DATA>(), 4);
+    assert_eq!(size_of::<MFMediaKeyStatus>(), 16);
+    assert_eq!(align_of::<MFMediaKeyStatus>(), 8);
+    assert_eq!(size_of::<MF_VIDEO_SPHERICAL_VIEWDIRECTION>(), 12);
+    assert_eq!(align_of::<MF_VIDEO_SPHERICAL_VIEWDIRECTION>(), 4);
+    assert_eq!(size_of::<SENSORPROFILEID>(), 24);
+    assert_eq!(align_of::<SENSORPROFILEID>(), 4);
+    assert_eq!(size_of::<MFCameraIntrinsic_CameraModel>(), 16);
+    assert_eq!(align_of::<MFCameraIntrinsic_CameraModel>(), 4);
+    assert_eq!(size_of::<MFCameraIntrinsic_DistortionModel6KT>(), 32);
+    assert_eq!(align_of::<MFCameraIntrinsic_DistortionModel6KT>(), 4);
+    assert_eq!(size_of::<MFCameraIntrinsic_DistortionModelArcTan>(), 20);
+    assert_eq!(align_of::<MFCameraIntrinsic_DistortionModelArcTan>(), 4);
+    assert_eq!(size_of::<MFCLOCK_PROPERTIES>(), 48);
+    assert_eq!(align_of::<MFCLOCK_PROPERTIES>(), 8);
+}
+#[cfg(feature = "mfobjects")] #[test]
+fn um_mfobjects() {
+    use winapi::um::mfobjects::*;
+    assert_eq!(size_of::<MFT_REGISTER_TYPE_INFO>(), 32);
+    assert_eq!(align_of::<MFT_REGISTER_TYPE_INFO>(), 4);
+    assert_eq!(size_of::<MFRatio>(), 8);
+    assert_eq!(align_of::<MFRatio>(), 4);
+    assert_eq!(size_of::<MFOffset>(), 4);
+    assert_eq!(align_of::<MFOffset>(), 2);
+    assert_eq!(size_of::<MFVideoArea>(), 16);
+    assert_eq!(align_of::<MFVideoArea>(), 4);
+    assert_eq!(size_of::<MFVideoInfo>(), 112);
+    assert_eq!(align_of::<MFVideoInfo>(), 8);
+    assert_eq!(size_of::<MFAYUVSample>(), 4);
+    assert_eq!(align_of::<MFAYUVSample>(), 1);
+    assert_eq!(size_of::<MFARGB>(), 4);
+    assert_eq!(align_of::<MFARGB>(), 1);
+    assert_eq!(size_of::<MFVideoSurfaceInfo>(), 12);
+    assert_eq!(align_of::<MFVideoSurfaceInfo>(), 4);
+    assert_eq!(size_of::<MFVideoCompressedInfo>(), 24);
+    assert_eq!(align_of::<MFVideoCompressedInfo>(), 8);
+    assert_eq!(size_of::<MFVIDEOFORMAT>(), 176);
+    assert_eq!(align_of::<MFVIDEOFORMAT>(), 8);
+}
+#[cfg(feature = "mfreadwrite")] #[test]
+fn um_mfreadwrite() {
+    use winapi::um::mfreadwrite::*;
+    assert_eq!(size_of::<MF_SINK_WRITER_STATISTICS>(), 112);
+    assert_eq!(align_of::<MF_SINK_WRITER_STATISTICS>(), 8);
+}
+#[cfg(feature = "mftransform")] #[test]
+fn um_mftransform() {
+    use winapi::um::mftransform::*;
+    assert_eq!(size_of::<MFT_INPUT_STREAM_INFO>(), 24);
+    assert_eq!(align_of::<MFT_INPUT_STREAM_INFO>(), 8);
+    assert_eq!(size_of::<MFT_OUTPUT_STREAM_INFO>(), 12);
+    assert_eq!(align_of::<MFT_OUTPUT_STREAM_INFO>(), 4);
+    assert_eq!(size_of::<MFT_OUTPUT_DATA_BUFFER>(), 32);
+    assert_eq!(align_of::<MFT_OUTPUT_DATA_BUFFER>(), 8);
+    assert_eq!(size_of::<STREAM_MEDIUM>(), 20);
+    assert_eq!(align_of::<STREAM_MEDIUM>(), 4);
+    assert_eq!(size_of::<MFAudioDecoderDegradationInfo>(), 8);
+    assert_eq!(align_of::<MFAudioDecoderDegradationInfo>(), 4);
+    assert_eq!(size_of::<MFT_STREAM_STATE_PARAM>(), 8);
+    assert_eq!(align_of::<MFT_STREAM_STATE_PARAM>(), 4);
+}
 #[cfg(feature = "minschannel")] #[test]
 fn um_minschannel() {
     use winapi::um::minschannel::*;
